@@ -35,10 +35,9 @@ if selected_option == "Predict Merchant Categorized As":
         def format_func(options):
             return Gender[options]
         user_gender = st.selectbox("Choose Gender:",options=list(Gender.keys()), format_func=format_func)
-        
-        age_ranges = [(18, 25), (26, 30), (31, 35), (36, 40), (41, 45), (46, 50)]
 
-        selected_range = st.selectbox("Select Age Range:", options=[f"{start}-{end}" for start, end in age_ranges], key='user_age')
+        user_age = st.slider("Select Age:", min_value=18, max_value=50, step=1, key='user_age')
+
 
         user_hsthold = st.slider("Choose Household Count:", min_value=1, max_value=31, value=1, step=1)
         user_income = st.slider("Select User Income :", min_value=0, max_value=100000, step=100, key='user_income')
@@ -72,7 +71,7 @@ if selected_option == "Predict Merchant Categorized As":
                 'PURCHASE_VALUE': [purchase_value],
                 'IS_PURCHASE_PAID_VIA_MPESA_SEND_MONEY': [isPurchase],
                 'IS_PURCHASE_PAID_VIA_MPESA_SEND_MONEY': [user_gender],
-                'USER_AGE': float([selected_range]),
+                'USER_AGE': [user_age],
                 'USER_GENDER' : [user_gender],
                 'USER_HOUSEHOLD': [user_hsthold],
                 'USER_INCOME': [user_income],
