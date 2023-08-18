@@ -58,7 +58,7 @@ if selected_option == "Predict Merchant Categorized As":
         def format_func(options):
             return mon[options]
     
-        month_Purchased = st.selectbox("Choose Month of the Merchant Categorized:", options=list(mon.keys()), format_func=format_func, key='month_purchased')
+        month_Purchased = st.selectbox("Choose Month of the Purchase:", options=list(mon.keys()), format_func=format_func, key='month_purchased')
         year_Purchased = st.slider("Choose Year of the Purchase:", min_value=2017, max_value=2030, step=1)
         hour_Purchased = st.number_input("Choose The Hour of the Purchase:") 
     
