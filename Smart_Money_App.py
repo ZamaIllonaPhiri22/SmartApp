@@ -72,7 +72,7 @@ if selected_option == "Predict Merchant Categorized As":
                 'PURCHASE_VALUE': [purchase_value],
                 'IS_PURCHASE_PAID_VIA_MPESA_SEND_MONEY': [isPurchase],
                 'IS_PURCHASE_PAID_VIA_MPESA_SEND_MONEY': [user_gender],
-                'USER_AGE': [selected_range],
+                'USER_AGE': [float(selected_range)],
                 'USER_GENDER' : [user_gender],
                 'USER_HOUSEHOLD': [user_hsthold],
                 'USER_INCOME': [user_income],
